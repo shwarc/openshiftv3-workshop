@@ -5,13 +5,13 @@
 In this exercise we will deploy a SpringBoot application using a custom
 source to image builder image.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 *Step 1: Create a project*
 
 Using the knowledge you gained from the earlier labs create a
-new project with name `spring-userxx`.
+new project with name `spring-userXX`.
 
 *Step 2: Create the application*
 
@@ -68,7 +68,7 @@ Check the route:
 ----
 $ oc get route
 NAME      HOST/PORT                                      PATH      SERVICES   PORT       TERMINATION
-bootapp   bootapp-spring-userxx.{{APPS_ADDRESS}}             bootapp    8080-tcp
+bootapp   bootapp-spring-userXX.{{APPS_ADDRESS}}             bootapp    8080-tcp
 ----
 
 Wait for your application to be built and deployed. Using the knowlege

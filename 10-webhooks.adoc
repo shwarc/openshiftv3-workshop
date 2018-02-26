@@ -18,11 +18,11 @@ In Part I of the Lab we will:
 
 *Step 1: Create new project*
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
-$ oc new-project scm-web-hooks-userxx --display-name="Test WebHooks"
+$ oc new-project scm-web-hooks-userXX --display-name="Test WebHooks"
 ----
 
 *Step 2: Create new application*
@@ -33,7 +33,7 @@ $ oc new-project scm-web-hooks-userxx --display-name="Test WebHooks"
 
 NOTE: We will use the forked repository.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
@@ -91,7 +91,7 @@ $ oc logs build/scm-web-hooks-1
 The build should finish similar to:
 
 ----
-Pushing image 172.30.89.28:5000/scm-web-hooks-userxx/scm-web-hooks:latest ...
+Pushing image 172.30.89.28:5000/scm-web-hooks-userXX/scm-web-hooks:latest ...
 Pushed 0/5 layers, 2% complete
 Pushed 1/5 layers, 22% complete
 Pushed 2/5 layers, 44% complete
@@ -111,19 +111,19 @@ NAME            CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 scm-web-hooks   172.30.71.191   <none>        8080/TCP   4m
 ----
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
-$ oc expose service scm-web-hooks --hostname=scm-web-hooks.userxx.{{APPS_ADDRESS}}
+$ oc expose service scm-web-hooks --hostname=scm-web-hooks.userXX.{{APPS_ADDRESS}}
 NAME            HOST/PORT                                  PATH      SERVICE         LABELS              TLS TERMINATION
-scm-web-hooks   scm-web-hooks.userxx.{{APPS_ADDRESS}}             scm-web-hooks   app=scm-web-hooks
+scm-web-hooks   scm-web-hooks.userXX.{{APPS_ADDRESS}}             scm-web-hooks   app=scm-web-hooks
 ----
 
 *Step 5: Test the application*
 
 * Use the newly created route, in the above case
-`scm-web-hooks.userxx.{{APPS_ADDRESS}}` and paste it in your browser.
+`scm-web-hooks.userXX.{{APPS_ADDRESS}}` and paste it in your browser.
 * You should see something similar to:
 
 image::green_deployment.png[image]

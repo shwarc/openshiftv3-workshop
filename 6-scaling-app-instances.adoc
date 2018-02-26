@@ -9,16 +9,16 @@ instances are always running.
 
 *Step 1: Switch to an existing project*
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 For this exercise, we will be using an already running application. We
-will be using the `mycliproject-userxx` that you created in the
+will be using the `mycliproject-userXX` that you created in the
 previous labs. Make sure you are switched to that project by using the
 `oc project` command.
 
 ----
-$ oc project mycliproject-userxx
+$ oc project mycliproject-userXX
 ----
 
 *Step 2: View the deployment config*
@@ -39,9 +39,9 @@ metadata:
   labels:
     app: time
   name: time
-  namespace: mycliproject-userxx
+  namespace: mycliproject-userXX
   resourceVersion: "32084"
-  selfLink: /oapi/v1/namespaces/mycliproject-userxx/deploymentconfigs/time
+  selfLink: /oapi/v1/namespaces/mycliproject-userXX/deploymentconfigs/time
   uid: 6bb299e0-8b88-11e6-ba5b-080027782cf7
 spec:
   replicas: 1
@@ -68,7 +68,7 @@ spec:
         deploymentconfig: time
     spec:
       containers:
-      - image: 172.30.89.28:5000/mycliproject-userxx/time@sha256:c490ea632c5362be3a3985285c623e674e58b876e70d9e3f94a151785b2ee87c
+      - image: 172.30.89.28:5000/mycliproject-userXX/time@sha256:c490ea632c5362be3a3985285c623e674e58b876e70d9e3f94a151785b2ee87c
         imagePullPolicy: Always
         name: time
         ports:
@@ -90,8 +90,8 @@ spec:
       from:
         kind: ImageStreamTag
         name: time:latest
-        namespace: mycliproject-userxx
-      lastTriggeredImage: 172.30.89.28:5000/mycliproject-userxx/time@sha256:c490ea632c5362be3a3985285c623e674e58b876e70d9e3f94a151785b2ee87c
+        namespace: mycliproject-userXX
+      lastTriggeredImage: 172.30.89.28:5000/mycliproject-userXX/time@sha256:c490ea632c5362be3a3985285c623e674e58b876e70d9e3f94a151785b2ee87c
     type: ImageChange
 status:
   availableReplicas: 1
@@ -101,7 +101,7 @@ status:
         from:
           kind: ImageStreamTag
           name: time:latest
-          namespace: mycliproject-userxx
+          namespace: mycliproject-userXX
       type: ImageChange
     message: caused by an image change
   latestVersion: 1
@@ -217,8 +217,8 @@ Run the `oc idle endpoints/time` command to idle the application
 ----
 $ oc idle endpoints/time
 
-Marked service mycliproject-userxx/time to unidle resource DeploymentConfig mycliproject-userxx/time (unidle to 3 replicas)
-Idled DeploymentConfig mycliproject-userxx/time (dry run)
+Marked service mycliproject-userXX/time to unidle resource DeploymentConfig mycliproject-userXX/time (unidle to 3 replicas)
+Idled DeploymentConfig mycliproject-userXX/time (dry run)
 ----
 
 Go back to the webconsole. You will notice that the pods show up as

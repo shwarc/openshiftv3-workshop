@@ -12,11 +12,11 @@ from your screen.
 
 Clean up the project that you created in the last lab.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 Ensure you are in the right project by running `oc project` command. If
-not, change your project by running `oc project spring-userxx`.
+not, change your project by running `oc project spring-userXX`.
 
 Clean up the contents of this project:
 

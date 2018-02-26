@@ -12,11 +12,11 @@ If you want to, you can create a new project based on what you have
 learned in the previous lab. Since we already have a project we will use
 it. Run the following command to make sure.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
-$ oc project mycliproject-userxx
+$ oc project mycliproject-userXX
 ----
 
 *Step 2: Create an application that uses Dockerfile*
@@ -88,7 +88,7 @@ $ oc get bc time -o json
     "apiVersion": "v1",
     "metadata": {
         "name": "time",
-        "namespace": "mycliproject-userxx",
+        "namespace": "mycliproject-userXX",
         "selfLink": "/oapi/v1/namespaces/mycliproject-admin/buildconfigs/time",
         "uid": "ac4beccd-9569-11e6-ad4c-000d3af733e4",
         "resourceVersion": "134692",
@@ -185,8 +185,8 @@ Successfully built 99563b872361
 I0701 01:00:01.954898       1 cfg.go:46] PUSH_DOCKERCFG_PATH=/var/run/secrets/openshift.io/push/.dockercfg
 I0701 01:00:01.955401       1 cfg.go:64] Using serviceaccount user for Docker authentication
 I0701 01:00:01.955426       1 docker.go:84] Using Docker authentication provided
-I0701 01:00:01.955441       1 docker.go:87] Pushing 172.30.246.7:5000/mycliproject-userxx/time image ...
-I0701 01:05:24.258995       1 docker.go:91] Successfully pushed 172.30.246.7:5000/mycliproject-userxx/time
+I0701 01:00:01.955441       1 docker.go:87] Pushing 172.30.246.7:5000/mycliproject-userXX/time image ...
+I0701 01:05:24.258995       1 docker.go:91] Successfully pushed 172.30.246.7:5000/mycliproject-userXX/time
 ----
 
 In the above log note how the image is pushed to the local docker
@@ -212,8 +212,8 @@ $ oc get dc -o json
             "apiVersion": "v1",
             "metadata": {
                 "name": "time",
-                "namespace": "mycliproject-userxx",
-                "selfLink": "/osapi/v1beta3/namespaces/mycliproject-userxx/deploymentconfigs/time",
+                "namespace": "mycliproject-userXX",
+                "selfLink": "/osapi/v1beta3/namespaces/mycliproject-userXX/deploymentconfigs/time",
                 "uid": "85a3d5c0-1fad-11e5-a792-fa163e91b409",
                 "resourceVersion": "12684",
                 "creationTimestamp": "2015-07-01T04:56:23Z"
@@ -238,7 +238,7 @@ $ oc get dc -o json
                                 "kind": "ImageStreamTag",
                                 "name": "time:latest"
                             },
-                            "lastTriggeredImage": "172.30.246.7:5000/mycliproject-userxx/time@sha256:1251dbf51a699928359046c0d5a98601fb2883f34c24a6ca80492c5a047942f5"
+                            "lastTriggeredImage": "172.30.246.7:5000/mycliproject-userXX/time@sha256:1251dbf51a699928359046c0d5a98601fb2883f34c24a6ca80492c5a047942f5"
                         }
                     }
                 ],
@@ -257,7 +257,7 @@ $ oc get dc -o json
                         "containers": [
                             {
                                 "name": "time",
-                                "image": "172.30.246.7:5000/mycliproject-userxx/time@sha256:1251dbf51a699928359046c0d5a98601fb2883f34c24a6ca80492c5a047942f5",
+                                "image": "172.30.246.7:5000/mycliproject-userXX/time@sha256:1251dbf51a699928359046c0d5a98601fb2883f34c24a6ca80492c5a047942f5",
                                 "ports": [
                                     {
                                         "name": "time-tcp-80",
@@ -288,7 +288,7 @@ $ oc get dc -o json
                             "imageTrigger": {
                                 "from": {
                                     "kind": "DockerImage",
-                                    "name": "172.30.246.7:5000/mycliproject-userxx/time:latest"
+                                    "name": "172.30.246.7:5000/mycliproject-userXX/time:latest"
                                 }
                             }
                         }
@@ -344,7 +344,7 @@ And then we check the route exposed.
 $ oc get routes
 
 NAME      HOST/PORT                                                          PATH      SERVICES   PORT       TERMINATION
-time      time-mycliproject-userxx.{{APPS_ADDRESS}}                       time       8080-tcp
+time      time-mycliproject-userXX.{{APPS_ADDRESS}}                       time       8080-tcp
 ----
 
 NOTE: Unlike in the previous lab, this time we did not use --hostname
@@ -361,7 +361,7 @@ NOTE: If you don't provide time.php extension, it displays apache's
 default index page.
 
 ----
-$ curl time-mycliproject-userxx.{{APPS_ADDRESS}}
+$ curl time-mycliproject-userXX.{{APPS_ADDRESS}}
 Wednesday 1st of July 2015 01:12:20 AM
 ----
 

@@ -70,7 +70,7 @@ image::jboss_install8.jpg[image]
 image::jboss_install_9.jpg[image]
 
 * Select Parameters listed below and enter the values
-** APPLICATION_DOMAIN:mytestapp-javatest-userxx.{{APPS_ADDRESS}}
+** APPLICATION_DOMAIN:mytestapp-javatest-userXX.{{APPS_ADDRESS}}
 ** APPLICATION_NAME:mytestapp
 ** CONTEXT_DIR:
 ** SOURCE_REPOSITORY_REF:

@@ -15,11 +15,11 @@ application from a browser.
 Based on the experience gained from the previous exercise, log into the
 OpenShift Web Console. You will see the list of Projects.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 Using the *New Project* button, create a new project. We will call it
-*dotnet-userxx*.
+*dotnet-userXX*.
 Type in a *Display Name* and *Description* of your choice.
 
 Press the *Create* button to complete the project creation from the Web

@@ -14,11 +14,11 @@ application from a browser.
 Based on the experience gained from the previous exercise, log into the
 OpenShift Web Console. You will see the list of Projects.
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 Using the *New Project* button, create a new project. We will call it
-*consoleproject-userxx*.
+*consoleproject-userXX*.
 Type in a *Display Name* and *Description* of your choice.
 
 Press the *Create* button to complete the project creation from the Web
@@ -95,13 +95,13 @@ image::mysql_service.png[image]
 Let us see how we can enter the pod and access the database.
 
 From the command line, change the project to the
-`consoleproject-userxx` using the following command:
+`consoleproject-userXX` using the following command:
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
-$ oc project consoleproject-userxx
+$ oc project consoleproject-userXX
 ----
 
 Based on what you learned previously get the list of running pods by running:
@@ -195,7 +195,7 @@ Browse through the code in this repository. It has a simple php file
 the users table and displays them.
 
 To add a frontend again click on *Add to Project* to spin up a frontend
-application in the same *consoleproject-userxx*. It takes you to
+application in the same *consoleproject-userXX*. It takes you to
 select image or template page and choose the *PHP* template under PHP
 apps.
 
@@ -247,7 +247,7 @@ Cloning "https://github.com/VeerMuchandi/dbtest.git" ...
 ---> Installing application source...
 
 
-Pushing image 172.30.89.28:5000/consoleproject-userxx/dbtest:latest ...
+Pushing image 172.30.89.28:5000/consoleproject-userXX/dbtest:latest ...
 Pushed 0/5 layers, 7% complete
 Pushed 1/5 layers, 21% complete
 Pushed 2/5 layers, 41% complete

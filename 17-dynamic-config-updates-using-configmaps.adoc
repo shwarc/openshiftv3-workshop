@@ -11,10 +11,10 @@ In the last lab, we created a configuration to connect to the MySQL database by 
 
 *Step 1: Create PostgreSQL Pod*
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
-Ensure you are in the `spring-userxx` project.
+Ensure you are in the `spring-userXX` project.
 
 Based on what you have learnt in the previous labs, create a new
 Postgresql database pod i.e. `Add to project`, search for `postgresql`,
@@ -101,7 +101,7 @@ Now let us update the ConfigMap to change the `application.properties`
 to point to `postgresql` datasource.
 
 Using CLI run the following command after you ensure you are in the
-`spring-userxx` project
+`spring-userXX` project
 
 ----
 $ oc edit configmap app-props
@@ -111,7 +111,7 @@ Edit the datasource parameters as below:
 
 ----
     spring.datasource.platform=postgresql
-    spring.datasource.url= jdbc:postgresql://postgresql.spring-userxx:5432/sampledb
+    spring.datasource.url= jdbc:postgresql://postgresql.spring-userXX:5432/sampledb
     spring.datasource.username=user
     spring.datasource.password=password
 ----
@@ -144,7 +144,7 @@ ConfigMap.
 ----
 sh-4.2$ cat config/application.properties
 spring.datasource.platform=postgresql
-spring.datasource.url= jdbc:postgresql://postgresql.spring-userxx:5432/sampledb
+spring.datasource.url= jdbc:postgresql://postgresql.spring-userXX:5432/sampledb
 spring.datasource.username=user
 spring.datasource.password=password
 ----
@@ -152,7 +152,7 @@ spring.datasource.password=password
 *Step 4: Test the application connection*
 
 Click the application url now i.e
-`http://bootapp-spring-userxx.{{APPS_ADDRESS}}/`. It will open
+`http://bootapp-spring-userXX.{{APPS_ADDRESS}}/`. It will open
 a new tab and greets you:
 
 ----
@@ -164,7 +164,7 @@ example `oc logs -f bootapp-2-06a4b` Watch out for connection url in the
 output.
 
 Now try the `/dbtest` endpoint i.e.
-`http://bootapp-spring-userxx.{{APPS_ADDRESS}}/dbtest`.
+`http://bootapp-spring-userXX.{{APPS_ADDRESS}}/dbtest`.
 
 NOTE: the output is still from the MySQLDB.
 
@@ -180,7 +180,7 @@ CustomerId: 4 Customer Name: Ann Mysql Age: 32
 Also the pod logs show that connection url is:
 
 ----
-connection url: jdbc:mysql://mysql.spring-userxx:3306/sampledb?useSSL=false
+connection url: jdbc:mysql://mysql.spring-userXX:3306/sampledb?useSSL=false
 ----
 
 So even after the `application.properties` file is updated in the pod,
@@ -190,7 +190,7 @@ annotation. So we can invoke `/refresh` endpoint to refresh the cache.
 Run the following command from CLI to refresh the cache.
 
 ----
-$ curl -X POST http://bootapp-spring-userxx.{{APPS_ADDRESS}}/refresh
+$ curl -X POST http://bootapp-spring-userXX.{{APPS_ADDRESS}}/refresh
 ["spring.datasource.url","spring.datasource.platform"]
 ----
 
@@ -216,7 +216,7 @@ CustomerId: 3 Customer Name: Ann Psql Age: 32
 Also note the logs will show the connection url as:
 
 ----
-connection url: jdbc:postgresql://postgresql.spring-userxx:5432/sampledb
+connection url: jdbc:postgresql://postgresql.spring-userXX:5432/sampledb
 ----
 
 NOTE: In this exercise, the pod was never redeployed. The

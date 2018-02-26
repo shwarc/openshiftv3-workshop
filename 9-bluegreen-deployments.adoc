@@ -32,11 +32,11 @@ image::blue_green_deployment.png[image]
 
 *Step 1: Create a new project*
 
-IMPORTANT: Please replace *userxx* with the username assigned to you in
+IMPORTANT: Please replace *userXX* with the username assigned to you in
 the commands below.
 
 ----
-$ oc new-project bluegreen-userxx --display-name="Blue Green Project" --description="Blue Green Project"
+$ oc new-project bluegreen-userXX --display-name="Blue Green Project" --description="Blue Green Project"
 ----
 
 *Step 2: List existing image builder or image streams*
@@ -86,7 +86,7 @@ Once the build finishes you should see something similar to:
 ---> Installing application source...
 
 
-Pushing image 172.30.89.28:5000/bluegreen-userxx/blue:latest ...
+Pushing image 172.30.89.28:5000/bluegreen-userXX/blue:latest ...
 Pushed 0/5 layers, 2% complete
 Pushed 1/5 layers, 24% complete
 Pushed 2/5 layers, 46% complete
@@ -125,7 +125,7 @@ IMPORTANT: Remember to substitute the username.
 Expose the service:
 
 ----
-$ oc expose service blue --hostname=bluegreen.userxx.{{APPS_ADDRESS}} --name=bluegreen
+$ oc expose service blue --hostname=bluegreen.userXX.{{APPS_ADDRESS}} --name=bluegreen
 ----
 
 *Step 8: Test the application*
@@ -190,12 +190,12 @@ metadata:
   labels:
     app: green
   name: bluegreen
-  namespace: bluegreen-userxx
+  namespace: bluegreen-userXX
   resourceVersion: "2969408"
-  selfLink: /oapi/v1/namespaces/bluegreen-userxx/routes/bluegreen
+  selfLink: /oapi/v1/namespaces/bluegreen-userXX/routes/bluegreen
   uid: 80829b59-a8e0-11e5-be21-fa163ec58dad
 spec:
-  host: bluegreen.userxx.{{APPS_ADDRESS}}
+  host: bluegreen.userXX.{{APPS_ADDRESS}}
   port:
     targetPort: "8080"
   to:
